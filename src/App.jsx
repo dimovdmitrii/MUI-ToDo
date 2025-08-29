@@ -1,5 +1,8 @@
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Header from "./components/header";
+import FullWidthTabs from "./components/filters";
+import CustomizedInputBase from "./components/searchBar";
 
 const mainTheme = createTheme({
   palette: {
@@ -22,7 +25,7 @@ const mainTheme = createTheme({
       fontWeight: 500,
       fontSize: 14,
       letterSpacing: 0.1,
-      lineHeight: 20,
+      lineHeight: 1.4,
     },
     body1: {
       fontSize: 16,
@@ -37,7 +40,13 @@ const mainTheme = createTheme({
 });
 
 function App() {
-  return <ThemeProvider theme={mainTheme}></ThemeProvider>;
+  return (
+    <ThemeProvider theme={mainTheme}>
+      <Header></Header>
+      <CustomizedInputBase></CustomizedInputBase>
+      <FullWidthTabs></FullWidthTabs>
+    </ThemeProvider>
+  );
 }
 
 export default App;
